@@ -32,9 +32,10 @@ time.sleep(0.5)
 print('\u3164')
 
 #custom 'figlet' text
-figlet =  '''\n
-        	  / /
-             / /         ___       __      ___   /  ___
+figlet =  '''\n           
+               / /                                 /
+              / /                                 /
+             / /         ___       __      ____  /  ___
             / /        //   ) ) //   ) ) //   ) / //   ) )
            / /        //   / / //   / / //   / / //   / /
 made by:  / /____/ / ((___/ / //   / / ((___/ / ((___/ /
@@ -80,7 +81,8 @@ b = obj['age']
 c = obj['emotion']
 d = obj['race']
 #prints grender
-print(colored(f"I think the photo contains a {a}", AL))
+# print(colored(f"I think the photo contains a {a}", AL))
+print(f"I think the photo contains a {a}")
 
 #if the picture contains a male, it will describe the person as 'he'
 if a == "Man":
