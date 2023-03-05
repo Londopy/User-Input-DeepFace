@@ -1,2 +1,3 @@
 #!/bin/bash
-python deepface.py
+pip install -r requirements.txt
+python main.py
