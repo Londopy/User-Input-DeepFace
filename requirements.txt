@@ -1,2 +1,1 @@
 deepface==0.0.75
-ipython==7.31.1
