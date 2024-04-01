@@ -29,13 +29,13 @@ cmd = 'date'
 time.sleep(0.5)
 
 #spacer for looks
-print('\u3164')
+print(' ')
 
 #custom 'figlet' text
 figlet =  '''\n           
                / /                                 /
               / /                                 /
-             / /         ___       __      ____  /  ___
+             / /         ___     /___      ___   /  ___
             / /        //   ) ) //   ) ) //   ) / //   ) )
            / /        //   / / //   / / //   / / //   / /
 made by:  / /____/ / ((___/ / //   / / ((___/ / ((___/ /
@@ -46,6 +46,7 @@ for line in figlet.splitlines():
 	print(colored(line, AL))
 
 imageFileName = input("Enter the name of the image file: ")
+print(" ")
 
 #path of image
 #path = "test.jpg"
@@ -54,112 +55,67 @@ path = imageFileName
 Image(filename = path)
 
 #analyzes image given & looks for the atribrutes(actions) requested
-obj = DeepFace.analyze(
+objs = DeepFace.analyze(
 	img_path=path,
-	actions=['age', 'gender', 'race', 'emotion'],
-	prog_bar=False
+	actions=['age', 'gender', 'race', 'emotion']
 )
 
 #sleeps the program for 3sec
 time.sleep(3)
 
 #spacer for looks
-print('\u3164')
-print('\u3164')
-print('\u3164')
-print('\u3164')
+print(' ')
+print(' ')
 print("--------------")
-print('\u3164')
-print('\u3164')
-print('\u3164')
+print(' ')
 
-emotions = obj['emotion']
-races = obj['race']
 
-a = obj['gender']
-b = obj['age']
-c = obj['emotion']
-d = obj['race']
-#prints grender
-# print(colored(f"I think the photo contains a {a}", AL))
-print(f"I think the photo contains a {a}")
+# Analyze the temporary image using DeepFace
+for obj in objs:
+	a = obj['gender']
+	b = obj['age']
+	c = obj['emotion']
+	d = obj['race']
 
-#if the picture contains a male, it will describe the person as 'he'
-if a == "Man":
+	# Determine the correct pronoun based on gender
+	genda = "he" if max(a, key=a.get) == "Man" else "she"
+
+	# print(colored(f"I think the photo contains a {a}", AL))
+	print(f"I think the photo contains a", max(a, key=a.get))
 
 	#sleeps the program for 1 sec
 	time.sleep(1)
 
 	#spacer for looks
-	print('\u3164')
+	print(' ')
 
 	#prints age
-	print(f"I think he is {b}")
+	print(f"I think {genda} is {b}")
 
 	#sleeps the program for 1 sec
 	time.sleep(1)
 
 	#spacer for looks
-	print('\u3164')
+	print(' ')
 
 	#prints emotion
-	print("I think he is", max(emotions, key=emotions.get))
+	print(f"I think {genda} is", max(c, key=c.get))
 
 	#sleeps the program for 1 sec
 	time.sleep(1)
 
 	#spacer for looks
-	print('\u3164')
+	print(' ')
 
 	#prints race
-	print("I think he is", max(races, key=races.get))
+	print(f"I think {genda} is", max(d, key=d.get))
 
 	#sleeps the program for 1.5 sec
 	time.sleep(1.5)
 
 	#spacer for looks
-	print('\u3164')
-	print('\u3164')
-
-	#pauses cmd
-	os.system("pause")
-
-#if the picture contains a female, it will describe the person as 'she'
-else:
-
-	#sleeps the program for 1 sec
-	time.sleep(1)
-
-	#spacer for looks
-	print('\u3164')
-
-	#prints age
-	print(f"I think she is {b}")
-
-	#sleeps the program for 1 sec
-	time.sleep(1)
-
-	#spacer for looks
-	print('\u3164')
-
-	#prints emotion
-	print("I think she is ", max(emotions, key=emotions.get))
-
-	#sleeps the program for 1 sec
-	time.sleep(1)
-
-	#spacer for looks
-	print('\u3164')
-
-	#prints race
-	print("I think she is ", max(races, key=races.get))
-
-	#sleeps the program for 1.5 sec
-	time.sleep(1.5)
-
-	#spacer for looks
-	print('\u3164')
-	print('\u3164')
+	print(' ')
+	print(' ')
 
 	#pauses cmd
 	os.system("pause")
