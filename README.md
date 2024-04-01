@@ -6,5 +6,5 @@ Simple deepface progrom, but it's way easier to use.
 
 ---
 
-![Capture](https://github.com/Londopy/User-Input-DeepFace/assets/109172537/16af229b-e3f1-4d13-a8ee-75277218940b)
+![CapturessPNG](https://github.com/Londopy/User-Input-DeepFace/assets/109172537/d983b00e-2449-4ca7-aa64-7fa26daeb4ab)
 
