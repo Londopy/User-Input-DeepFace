@@ -1,21 +1,11 @@
-#check each module to see if its on the users computer
-try:
-	from deepface import DeepFace
-	from IPython.display import Image
-	import webbrowser
-	from termcolor import colored, cprint
-	import sys
-	import time
-	import os
-	import random
-#if one or more modules is not on the computer it will auto install the module(s)
-except ModuleNotFoundError:
-	from subprocess import call
-	#list of modules
-	modules = ["ipython","deepface", "termcolor", "Flask"]
-	#auto installs them
-	call("pip install " + ' '.join(modules), shell=True)
-
+from deepface import DeepFace
+from IPython.display import Image
+import webbrowser
+from termcolor import colored, cprint
+import sys
+import time
+import os
+import random
 
 #random list of colours
 Alist = ["red", "blue", "magenta", "green", "cyan", "yellow"]
